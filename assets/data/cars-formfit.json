@@ -1,0 +1,34 @@
+{
+    "data": 
+        {
+            "id": 1,
+            "ten": "Danh mục tài sản cố định",
+            "tenEng": "List of cars",
+            "tenNgan": "Chi tiết TSCĐ",
+            "table": "tscd",
+            "module": "ACC",
+            "isPaginator": true,
+            "rowPaginator": 15,
+            "isSort": true,
+            "isFilter": true,
+            "isFilterOperator": true,
+            "isResizable": true,
+            "isScrollable": true
+        },
+    "khang": 
+        {
+            "id": 1,
+            "ten": "Danh mục khách hàng",
+            "tenEng": "List of customers",
+            "tenNgan": "Chi tiết khách hàng",
+            "table": "khang",
+            "module": "ACC",
+            "isPaginator": true,
+            "rowPaginator": 15,
+            "isSort": true,
+            "isFilter": true,
+            "isFilterOperator": true,
+            "isResizable": true,
+            "isScrollable": true
+        }
+}

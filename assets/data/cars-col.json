@@ -1,0 +1,18 @@
+{"khang": [
+    { "field": "ma", "header": "Mã", "width": "100px", "filterIdx": 0, "filterMode": "", "type": "string" },
+    { "field": "ten", "header": "Tên khách hàng", "width": "250px", "filterIdx": 0, "filterMode": "", "type": "string" },
+    { "field": "dia_chi", "header": "Địa chỉ", "width": "250px", "filterIdx": 0, "filterMode": "", "type": "string" },
+    { "field": "ma_gtgt", "header": "Mã số thuế", "width": "150px", "filterIdx": 0, "filterMode": "", "type": "string" }
+          
+],
+"data": [
+    { "field": "vin", "header": "Số Vin", "width": "150px", "filterIdx": 0, "filterMode": "", "type": "string" },
+    { "field": "year", "header": "Năm sản xuất", "width": "150px", "filterIdx": 0, "filterMode": "", "type": "number" },
+    { "field": "brand", "header": "Thương hiệu", "width": "200px", "filterIdx": 0, "filterMode": "", "type": "string" },
+    { "field": "color", "header": "Màu sắc", "width": "200px", "filterIdx": 0, "filterMode": "", "type": "string" },
+    { "field": "quantity", "header": "Số lượng", "width": "250px", "filterIdx": 0, "filterMode": "", "type": "string" },
+    { "field": "price", "header": "Đơn giá", "width": "250px", "filterIdx": 0, "filterMode": "", "type": "string" },
+    { "field": "amount", "header": "Thành tiền", "width": "250px", "filterIdx": 0, "filterMode": "", "type": "string" },
+    { "field": "notes", "header": "Ghi chú", "width": "400px", "filterIdx": 0, "filterMode": "", "type": "string" }
+    ]
+}
