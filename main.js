@@ -763,104 +763,109 @@ var AccLayoutComponent = /** @class */ (function () {
         var _this = this;
         this.items = [
             {
-                label: 'Hệ thống', icon: 'pi pi-fw pi-file', items: [{
-                        label: 'New',
-                        icon: 'pi pi-fw pi-plus',
-                        items: [
-                            { label: 'Project' },
-                            { label: 'Other' },
-                        ]
-                    },
-                    { label: 'Open' },
+                label: 'Hệ thống', icon: 'pi pi-fw pi-file', items: [
+                    { label: 'Quản trị người dùng', command: function (event) { return _this.onSystemClick(event); } },
+                    { label: 'Back up dữ liệu', command: function (event) { return _this.onSystemClick(event); } },
+                    { label: 'Khóa dữ liệu', command: function (event) { return _this.onSystemClick(event); } },
                     { separator: true },
-                    { label: 'Quit' }
+                    { label: 'Cấu hình hệ thống', command: function (event) { return _this.onSystemClick(event); } }
                 ]
             },
             {
-                label: 'Nhập liệu',
-                icon: 'pi pi-fw pi-pencil',
-                items: [
-                    { label: 'Delete', icon: 'pi pi-fw pi-trash' },
-                    { label: 'Refresh', icon: 'pi pi-fw pi-refresh' }
-                ]
-            },
-            {
-                label: 'Danh mục',
-                icon: 'pi pi-fw pi-list',
-                items: [
-                    { label: 'Danh mục khách hàng', command: function (event) { return _this.onMenuClick('khang'); } },
-                    { label: 'Danh mục tài sản cố định', command: function (event) { return _this.onMenuClick('tscd'); } }
-                ]
-            },
-            {
-                label: 'Chức năng',
-                icon: 'pi pi-fw pi-cog',
-                items: [
-                    {
-                        label: 'Edit',
-                        icon: 'pi pi-fw pi-pencil',
-                        items: [
-                            { label: 'Save', icon: 'pi pi-fw pi-save' },
-                            { label: 'Update', icon: 'pi pi-fw pi-save' },
+                label: 'Nhập liệu', items: [
+                    { label: 'Tiền mặt', items: [
+                            { label: 'Phiếu thu tiền mặt', command: function (event) { return _this.onInputClick(event); } },
+                            { label: 'Phiếu chi tiền mặt', command: function (event) { return _this.onInputClick(event); } },
+                            { separator: true },
+                            { label: 'Phiếu thu tiền mặt ngoại tệ', command: function (event) { return _this.onInputClick(event); } },
+                            { label: 'Phiếu chi tiền mặt ngoại tệ', command: function (event) { return _this.onInputClick(event); } }
                         ]
                     },
-                    {
-                        label: 'Other',
-                        icon: 'pi pi-fw pi-tags',
-                        items: [
-                            { label: 'Delete', icon: 'pi pi-fw pi-minus' }
+                    { label: 'Ngân hàng', items: [
+                            { label: 'Phiếu thu tiền gửi ngân hàng', command: function (event) { return _this.onInputClick(event); } },
+                            { label: 'Phiếu chi tiền gửi ngân hàng', command: function (event) { return _this.onInputClick(event); } },
+                            { separator: true },
+                            { label: 'Phiếu thu tiền gửi ngân hàng ngoại tệ', command: function (event) { return _this.onInputClick(event); } },
+                            { label: 'Phiếu chi tiền gửi ngân hàng ngoại tệ', command: function (event) { return _this.onInputClick(event); } },
+                            { separator: true },
+                            { label: 'Phiếu hạch toán vay ngân hàng', command: function (event) { return _this.onInputClick(event); } }
                         ]
                     }
+                ]
+            },
+            {
+                label: 'Danh mục', icon: 'pi pi-fw pi-list', items: [
+                    { label: 'Danh mục khách hàng', style: { width: '250px' }, command: function (event) { return _this.onReportClick(event); } },
+                    { label: 'Danh mục tài sản cố định', command: function (event) { return _this.onReportClick(event); } }
+                ]
+            },
+            {
+                label: 'Chức năng', icon: 'pi pi-fw pi-cog', items: [
+                    { label: 'Phân bổ chi phí trả trước', style: { width: '300px' },
+                        title: 'Phân bổ tự động các chi phí trả trước hạch toán tài khoản 242',
+                        command: function (event) { return _this.onFunctionClick(event); } },
+                    { label: 'Khấu hao tài sản cố định',
+                        title: 'Trích khấu hao tự động tài sản cố định ',
+                        command: function (event) { return _this.onFunctionClick(event); } },
+                    { separator: true },
+                    { label: 'Tính giá vốn vật tư hàng hóa',
+                        title: 'Tính lại giá vốn vật tư, công cụ dụng cụ, thành phẩm, hàng hóa',
+                        command: function (event) { return _this.onFunctionClick(event); } },
+                    { label: 'Tính giá thành sản phẩm', command: function (event) { return _this.onFunctionClick(event); } },
+                    { separator: true },
+                    { label: 'Kết chuyển xác định kết quả kinh doanh',
+                        title: 'Kết chuyển số dư các tài khoản loại 5, 6, 7, 8, 9',
+                        command: function (event) { return _this.onFunctionClick(event); } }
                 ]
             },
             {
                 label: 'Báo cáo',
                 icon: 'fa fa-book',
                 items: [
-                    { label: 'Báo cáo tiền', items: [
+                    { label: 'Báo cáo tiền', style: { width: '200px' }, items: [
+                            { label: 'Báo cáo tiền mặt', style: { width: '200px' }, command: function (event) { return _this.onReportClick(event); } },
+                            { label: 'Sổ quỹ ngân hàng', command: function (event) { return _this.onReportClick(event); } },
+                            { label: 'Cân đối tài khoản', command: function (event) { return _this.onReportClick(event); } },
+                            { label: 'Kết quả kinh doanh', command: function (event) { return _this.onReportClick(event); } },
+                            { label: 'Cân đối kế toán', command: function (event) { return _this.onReportClick(event); } },
                             { label: 'Báo cáo tiền mặt', command: function (event) { return _this.onReportClick(event); } },
-                            { label: 'Sổ quỹ ngân hàng', command: function (event) { return _this.onMenuClick('khang'); } },
-                            { label: 'Cân đối tài khoản', command: function (event) { return _this.onMenuClick('thietbi'); } },
-                            { label: 'Kết quả kinh doanh', command: function (event) { return _this.onMenuClick('kho'); } },
-                            { label: 'Cân đối kế toán', command: function (event) { return _this.onMenuClick('tscd'); } },
-                            { label: 'Báo cáo tiền mặt', command: function (event) { return _this.onMenuClick('tkhoan'); } },
-                            { label: 'Sổ quỹ ngân hàng', command: function (event) { return _this.onMenuClick('khang'); } },
-                            { label: 'Cân đối tài khoản', command: function (event) { return _this.onMenuClick('thietbi'); } },
-                            { label: 'Kết quả kinh doanh', command: function (event) { return _this.onMenuClick('kho'); } },
-                            { label: 'Cân đối kế toán', command: function (event) { return _this.onMenuClick('tscd'); } },
-                            { label: 'Báo cáo tiền mặt', command: function (event) { return _this.onMenuClick('tkhoan'); } },
-                            { label: 'Sổ quỹ ngân hàng', command: function (event) { return _this.onMenuClick('khang'); } },
-                            { label: 'Cân đối tài khoản', command: function (event) { return _this.onMenuClick('thietbi'); } }
+                            { label: 'Sổ quỹ ngân hàng', command: function (event) { return _this.onReportClick(event); } },
+                            { label: 'Cân đối tài khoản', command: function (event) { return _this.onReportClick(event); } },
+                            { label: 'Kết quả kinh doanh', command: function (event) { return _this.onReportClick(event); } },
+                            { label: 'Cân đối kế toán', command: function (event) { return _this.onReportClick(event); } },
+                            { label: 'Báo cáo tiền mặt', command: function (event) { return _this.onReportClick(event); } },
+                            { label: 'Sổ quỹ ngân hàng', command: function (event) { return _this.onReportClick(event); } },
+                            { label: 'Cân đối tài khoản', command: function (event) { return _this.onReportClick(event); } }
                         ]
                     },
-                    { label: 'Báo cáo công nợ', items: [
-                            { label: 'Kết quả kinh doanh', command: function (event) { return _this.onMenuClick('kho'); } },
-                            { label: 'Cân đối kế toán', command: function (event) { return _this.onMenuClick('tscd'); } },
-                            { label: 'Báo cáo tiền mặt', command: function (event) { return _this.onMenuClick('tkhoan'); } },
-                            { label: 'Sổ quỹ ngân hàng', command: function (event) { return _this.onMenuClick('khang'); } },
-                            { label: 'Cân đối tài khoản', command: function (event) { return _this.onMenuClick('thietbi'); } },
-                            { label: 'Kết quả kinh doanh', command: function (event) { return _this.onMenuClick('kho'); } },
-                            { label: 'Cân đối kế toán', command: function (event) { return _this.onMenuClick('tscd'); } },
-                            { label: 'Báo cáo tiền mặt', command: function (event) { return _this.onMenuClick('tkhoan'); } },
-                            { label: 'Sổ quỹ ngân hàng', command: function (event) { return _this.onMenuClick('khang'); } },
-                            { label: 'Cân đối tài khoản', command: function (event) { return _this.onMenuClick('thietbi'); } },
-                            { label: 'Kết quả kinh doanh', command: function (event) { return _this.onMenuClick('kho'); } },
-                            { label: 'Cân đối kế toán', command: function (event) { return _this.onMenuClick('tscd'); } },
-                            { label: 'Báo cáo tiền mặt', command: function (event) { return _this.onMenuClick('tkhoan'); } },
-                            { label: 'Sổ quỹ ngân hàng', command: function (event) { return _this.onMenuClick('khang'); } },
-                            { label: 'Cân đối tài khoản', command: function (event) { return _this.onMenuClick('thietbi'); } },
-                            { label: 'Kết quả kinh doanh', command: function (event) { return _this.onMenuClick('kho'); } }
+                    { label: 'Báo cáo công nợ', style: { width: '200px' }, items: [
+                            { label: 'Kết quả kinh doanh', style: { width: '200px' }, command: function (event) { return _this.onReportClick(event); }, },
+                            { label: 'Cân đối kế toán', command: function (event) { return _this.onReportClick(event); } },
+                            { label: 'Báo cáo tiền mặt', command: function (event) { return _this.onReportClick(event); } },
+                            { label: 'Sổ quỹ ngân hàng', command: function (event) { return _this.onReportClick(event); } },
+                            { label: 'Cân đối tài khoản', command: function (event) { return _this.onReportClick(event); } },
+                            { label: 'Kết quả kinh doanh', command: function (event) { return _this.onReportClick(event); } },
+                            { label: 'Cân đối kế toán', command: function (event) { return _this.onReportClick(event); } },
+                            { label: 'Báo cáo tiền mặt', command: function (event) { return _this.onReportClick(event); } },
+                            { label: 'Sổ quỹ ngân hàng', command: function (event) { return _this.onReportClick(event); } },
+                            { label: 'Cân đối tài khoản', command: function (event) { return _this.onReportClick(event); } },
+                            { label: 'Kết quả kinh doanh', command: function (event) { return _this.onReportClick(event); } },
+                            { label: 'Cân đối kế toán', command: function (event) { return _this.onReportClick(event); } },
+                            { label: 'Báo cáo tiền mặt', command: function (event) { return _this.onReportClick(event); } },
+                            { label: 'Sổ quỹ ngân hàng', command: function (event) { return _this.onReportClick(event); } },
+                            { label: 'Cân đối tài khoản', command: function (event) { return _this.onReportClick(event); } },
+                            { label: 'Kết quả kinh doanh', command: function (event) { return _this.onReportClick(event); } }
                         ]
                     },
                     { label: 'Báo cáo tài chính', items: [
-                            { label: 'Cân đối tài khoản', command: function (event) { return _this.onMenuClick('thietbi'); } },
-                            { label: 'Cân đối kế toán', command: function (event) { return _this.onMenuClick('tscd'); } },
-                            { label: 'Kết quả kinh doanh', command: function (event) { return _this.onMenuClick('kho'); } },
-                            { label: 'Kết quả kinh doanh', command: function (event) { return _this.onMenuClick('kho'); } }
+                            { label: 'Cân đối tài khoản', command: function (event) { return _this.onReportClick(event); } },
+                            { label: 'Cân đối kế toán', command: function (event) { return _this.onReportClick(event); } },
+                            { label: 'Kết quả kinh doanh', command: function (event) { return _this.onReportClick(event); } },
+                            { label: 'Kết quả kinh doanh', command: function (event) { return _this.onReportClick(event); } }
                         ]
                     }
                 ]
-            }
+            } // bao cao
         ];
     };
     // menu click
@@ -869,7 +874,19 @@ var AccLayoutComponent = /** @class */ (function () {
     };
     // report click
     AccLayoutComponent.prototype.onReportClick = function (report) {
-        console.log(report);
+        alert('Báo cáo: ' + report.item.label);
+    };
+    // input data lick
+    AccLayoutComponent.prototype.onInputClick = function (screen) {
+        alert('Nhập liệu: ' + screen.item.label);
+    };
+    // system click
+    AccLayoutComponent.prototype.onSystemClick = function (system) {
+        alert('Hệ thống: ' + system.item.label);
+    };
+    // utility click
+    AccLayoutComponent.prototype.onFunctionClick = function (utility) {
+        alert('Chức năng: ' + utility.item.label);
     };
     //  call global service, sign-out and route log-in page
     AccLayoutComponent.prototype.onSignOut = function () {
