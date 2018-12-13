@@ -772,9 +772,9 @@ var AccLayoutComponent = /** @class */ (function () {
                 ]
             },
             {
-                label: 'Nhập liệu', items: [
+                label: 'Nhập liệu', icon: 'pi pi-fw pi-pencil', items: [
                     { label: 'Tiền mặt', items: [
-                            { label: 'Phiếu thu tiền mặt', command: function (event) { return _this.onInputClick(event); } },
+                            { label: 'Phiếu thu tiền mặt', style: { width: '250px' }, command: function (event) { return _this.onInputClick(event); } },
                             { label: 'Phiếu chi tiền mặt', command: function (event) { return _this.onInputClick(event); } },
                             { separator: true },
                             { label: 'Phiếu thu tiền mặt ngoại tệ', command: function (event) { return _this.onInputClick(event); } },
@@ -782,7 +782,7 @@ var AccLayoutComponent = /** @class */ (function () {
                         ]
                     },
                     { label: 'Ngân hàng', items: [
-                            { label: 'Phiếu thu tiền gửi ngân hàng', command: function (event) { return _this.onInputClick(event); } },
+                            { label: 'Phiếu thu tiền gửi ngân hàng', style: { width: '250px' }, command: function (event) { return _this.onInputClick(event); } },
                             { label: 'Phiếu chi tiền gửi ngân hàng', command: function (event) { return _this.onInputClick(event); } },
                             { separator: true },
                             { label: 'Phiếu thu tiền gửi ngân hàng ngoại tệ', command: function (event) { return _this.onInputClick(event); } },
@@ -795,13 +795,13 @@ var AccLayoutComponent = /** @class */ (function () {
             },
             {
                 label: 'Danh mục', icon: 'pi pi-fw pi-list', items: [
-                    { label: 'Danh mục khách hàng', style: { width: '250px' }, command: function (event) { return _this.onReportClick(event); } },
-                    { label: 'Danh mục tài sản cố định', command: function (event) { return _this.onReportClick(event); } }
+                    { label: 'Danh mục khách hàng', style: { width: '250px' }, id: 'khang', command: function (event) { return _this.onMenuClick(event); } },
+                    { label: 'Danh mục tài sản cố định', id: 'tscd', command: function (event) { return _this.onMenuClick(event); } }
                 ]
             },
             {
                 label: 'Chức năng', icon: 'pi pi-fw pi-cog', items: [
-                    { label: 'Phân bổ chi phí trả trước', style: { width: '300px' },
+                    { label: 'Phân bổ chi phí trả trước', style: { width: '250px' },
                         title: 'Phân bổ tự động các chi phí trả trước hạch toán tài khoản 242',
                         command: function (event) { return _this.onFunctionClick(event); } },
                     { label: 'Khấu hao tài sản cố định',
@@ -820,7 +820,7 @@ var AccLayoutComponent = /** @class */ (function () {
             },
             {
                 label: 'Báo cáo',
-                icon: 'fa fa-book',
+                icon: 'pi pi-fw pi-tags',
                 items: [
                     { label: 'Báo cáo tiền', style: { width: '200px' }, items: [
                             { label: 'Báo cáo tiền mặt', style: { width: '200px' }, command: function (event) { return _this.onReportClick(event); } },
@@ -869,8 +869,8 @@ var AccLayoutComponent = /** @class */ (function () {
         ];
     };
     // menu click
-    AccLayoutComponent.prototype.onMenuClick = function (danhmuc) {
-        this.router.navigate(['/danhmuc'], { queryParams: { danhmuc: danhmuc } });
+    AccLayoutComponent.prototype.onMenuClick = function (event) {
+        this.router.navigate(['/danhmuc'], { queryParams: { danhmuc: event.item.id } });
     };
     // report click
     AccLayoutComponent.prototype.onReportClick = function (report) {
